@@ -88,6 +88,7 @@ def home():
         return redirect(url_for("registrar"))
     return render_template("home.html",
                            usuario=session["usuario"],
+                           datos_usuario = usuarios[session["usuario"]],
                            series_me_gustaria_ver=usuarios[session["usuario"]]["series"]["megustariaver"],
                            series_he_visto=usuarios[session["usuario"]]["series"]["hevisto"],
                            series_estoy_viendo=usuarios[session["usuario"]]["series"]["estoyviendo"])
