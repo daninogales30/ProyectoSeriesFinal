@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro</title>
+    <link rel="stylesheet" href="../static/registrar_css.css">
+</head>
+<body>
+    <h1>Registro de Usuario</h1>
+    <p>Si ya tiene una cuenta, <a href="{{ url_for('login') }}">pinche aquí</a>, si la tiene que crear, siga con el formulario</p>
+
+    {% if error %}
+        <p id="p_error">{{ error }}</p>
+    {% endif %}
+
+    <form action="{{ url_for('registrar') }}" method="post">
+        <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Registrar</button><br>
+    </form>
+
+    <p>Recuerde, cuando se registra deberá ahora iniciar sesión</p>
+
+
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="../static/login_css.css">
+</head>
+<body>
+    <h1>Inicio de sesión</h1>
+
+    {% if error %}
+        <p id="p_error">{{ error }}</p>
+    {% endif %}
+
+    <form action="{{ url_for('login') }}" method="post">
+        <input type="text" name="usuario" id="usuario" placeholder="Nombre de usuario" required>
+        <input type="password" name="password" id="password" placeholder="Contraseña" required>
+        <button type="submit">Iniciar sesión</button>
+    </form>
+
+    <p>Si no tiene cuentra, cree una <a href="{{ url_for('registrar') }}">clickando aquí</a>.</p>
+</body>
+</html>

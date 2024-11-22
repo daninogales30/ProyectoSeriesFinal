@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Listado de series</title>
+    <link rel="stylesheet" href="../static/home_css.css">
+</head>
+<body>
+    <h1>Bienvenido a la página principal {{ usuario }}</h1>
+    <p>Si desea cerrar sesión, <a href="{{ url_for('logout') }}">pincha aquí</a>.</p>
+    <p>O, si quieres crear otra cuenta, <a href="{{ url_for('registrar') }}">pincha aquí</a>.</p>
+    <p>Si desea añadir una serie, clickee en <a href="{{ url_for('anadir_serie') }}">añadir serie</a>.</p>
+
+    <h2>Aquí tienes un listado de tus series: </h2>
+    <h3>Series que me gustaría ver</h3>
+    <ul>
+        {% for serie in series_me_gustaria_ver %}
+            <li>
+                <p>Nombre de la serie: {{ serie["nombreSerie"] }}. Nota de la serie: {{ serie["nota"] }}.</p>
+            </li>
+        {% else %}
+            <li>
+                <p>No tienes series en esta categoría</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Series que estoy viendo</h3>
+    <ul>
+        {% for serie in series_estoy_viendo %}
+            <li>
+                <p>Nombre de la serie: {{ serie["nombreSerie"] }}. Nota de la serie: {{ serie["nota"] }}.</p>
+            </li>
+        {% else %}
+            <li>
+                <p>No tienes series en esta categoría</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+    <h3>Series que he visto</h3>
+    <ul>
+        {% for serie in series_he_visto %}
+            <li>
+                <p>Nombre de la serie: {{ serie["nombreSerie"] }}. Nota de la serie: {{ serie["nota"] }}.</p>
+            </li>
+        {% else %}
+            <li>
+                <p>No tienes series en esta categoría</p>
+            </li>
+        {% endfor %}
+    </ul>
+
+
+
+</body>
+</html>
