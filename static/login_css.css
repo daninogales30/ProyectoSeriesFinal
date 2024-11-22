@@ -36,7 +36,7 @@ input[type="password"] {
     box-sizing: border-box;
 }
 
-button[type="submit"], #sonrisa{
+button[type="submit"]{
     background-color: #555555;
     color: white;
     padding: 12px;
@@ -45,11 +45,6 @@ button[type="submit"], #sonrisa{
     cursor: pointer;
     width: 100%;
     font-size: 16px;
-}
-
-#sonrisa{
-    margin-top: 20px;
-    width: 200px;
 }
 
 button[type="submit"]:hover {
